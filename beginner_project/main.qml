@@ -20,31 +20,31 @@ Window {
         anchors.centerIn: parent
 
         TextField{
-            id: first_name_field
+            id: button_color
             Layout.fillWidth: true
             placeholderText: "Button color"
         }
 
         TextField{
-            id: last_name_field
+            id: button_text
             Layout.fillWidth: true
             placeholderText: "Button text"
         }
 
         TextField{
-            id: phone_field
+            id: button_text_color
             Layout.fillWidth: true
             placeholderText: "Button text color"
         }
 
         TextField{
-            id: email_field
+            id: on_clicked_text
             Layout.fillWidth: true
             placeholderText: "On clicked Text"
         }
 
         TextField{
-            id: address_field
+            id: bg_color
             Layout.fillWidth: true
             placeholderText: "Window bg color"
         }
@@ -59,13 +59,8 @@ Window {
         height: 50
         text: "Save"
 
-        onClicked: DataManager.save_action(
-                       first_name_field.text,
-                       last_name_field.text,
-                       phone_field.text,
-                       email_field.text,
-                       address_field.text
-                       )
+        onClicked: Editor.button_clicked_action()
+
 
     Button{
         width: 100
@@ -74,6 +69,7 @@ Window {
         y:-60
         anchors.right: save_button.left
         anchors.margins: 200
+
 
 
     }

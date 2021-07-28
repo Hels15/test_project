@@ -33,6 +33,7 @@ class Window_editor(QObject):
             json.dump(data,f)
 
 
+
 class Form:
     def __init__(self):
 
