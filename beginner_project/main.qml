@@ -1,8 +1,8 @@
 import QtQuick
 import QtQuick.Window
-import QtQuick.Controls
+import QtQuick.Controls 2.15
 import QtQuick.Layouts
-import QtQuick.Controls.Styles
+
 
 Window {
     width: 640
@@ -65,26 +65,45 @@ Window {
                        button_text_color.text,
                        on_clicked_text.text,
                        bg_color.text)
+    }
 
     Button{
+        id:fileButton
+        text: "Information"
         width: 100
         height: 50
-        x:10
-        y:-60
+        x:100
+        y:340
         anchors.right: save_button.left
         anchors.margins: 200
-        style: ButtonStyle{
-            background: Rectangle{
-                implicitWidth: 100
-                implicitHeight: 25
-                border.color: "#888"
-            }
+        onClicked: popup.open()
+    }
+
+
+
+    Popup {
+        id:popup
+        x:100
+        y:100
+        width: 200
+        height: 300
+        modal: true
+        focus: true
+        contentItem:  Text{
+            text: TextClass.text
+
         }
 
 
-
-
-
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
     }
-    }
+
+
+
+
+
+
+
+
+
 }

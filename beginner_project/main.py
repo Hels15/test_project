@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import sys,json
 
+from package.text import return_text
 
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
@@ -32,6 +33,13 @@ class Window_editor(QObject):
         with open("data.json", "w") as f:
             json.dump(data,f)
 
+class Text_Class(QObject):
+    def __init__(self):
+        super().__init__()
+        self.text = return_text()
+    def return_text(self):
+        return self.text
+    text = Property(str,return_text)
 
 
 class Form:
@@ -45,8 +53,9 @@ class Form:
 
         self.context = self.engine.rootContext()
         self.editor = Window_editor()
+        self.text = Text_Class()
         self.context.setContextProperty("Editor", self.editor)
-
+        self.context.setContextProperty("TextClass", self.text)
 
 
 
