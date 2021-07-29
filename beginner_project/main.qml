@@ -59,8 +59,12 @@ Window {
         height: 50
         text: "Save"
 
-        onClicked: Editor.button_clicked_action()
-
+        onClicked: Editor.save_action(
+                       button_color.text,
+                       button_text.text,
+                       button_text_color.text,
+                       on_clicked_text.text,
+                       bg_color.text)
 
     Button{
         width: 100
