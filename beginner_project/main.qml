@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
-
+import QtQuick.Controls.Styles
 
 Window {
     width: 640
@@ -73,14 +73,18 @@ Window {
         y:-60
         anchors.right: save_button.left
         anchors.margins: 200
+        style: ButtonStyle{
+            background: Rectangle{
+                implicitWidth: 100
+                implicitHeight: 25
+                border.color: "#888"
+            }
+        }
+
+
 
 
 
     }
     }
 }
-
-
-
-
-
