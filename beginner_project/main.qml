@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls 2.15
 import QtQuick.Layouts
+import QtQuick.Controls.Styles 1.4
 
 
 Window {
@@ -76,7 +77,13 @@ Window {
         y:340
         anchors.right: save_button.left
         anchors.margins: 200
+        style: ButtonStyle{
+            background: Rectangle {
+                radius:4
+            }
+        }
         onClicked: popup.open()
+
     }
 
 
@@ -85,12 +92,22 @@ Window {
         id:popup
         x:100
         y:100
-        width: 200
+        width: 300
         height: 300
         modal: true
         focus: true
         contentItem:  Text{
             text: TextClass.text
+            font.pointSize: 10
+            font.family: "Helvetica"
+            color: "red"
+        }
+        Button{
+            text: "Cancel"
+            x: parent.width / 2
+            y: parent.height / 2
+
+
 
         }
 

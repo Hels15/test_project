@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 import sys,json
 
-from package.text import return_text
+
 
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
@@ -36,9 +36,17 @@ class Window_editor(QObject):
 class Text_Class(QObject):
     def __init__(self):
         super().__init__()
-        self.text = return_text()
+        self._text = "Hi, This Popup window actually information sign!\n" \
+                     "If you would like to exit, then press ESC."
+
+
+
+
+        
+        
+
     def return_text(self):
-        return self.text
+        return self._text
     text = Property(str,return_text)
 
 
